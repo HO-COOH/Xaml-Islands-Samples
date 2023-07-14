@@ -40,8 +40,6 @@
 #include <winrt/SceneLoaderComponent.h>
 #endif
 
-#include <winrt/SampleUserControl.h>
-
 #include <vector>
 #include <algorithm>
 #include <iterator>

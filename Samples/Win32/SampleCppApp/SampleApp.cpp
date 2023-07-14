@@ -136,11 +136,6 @@ private:
 
         case IDM_ButtonID1:
         case IDM_ButtonID2:
-            if (m_mainUserControl)
-            {
-                const auto string = (id == IDM_ButtonID1) ? L"Native button 1" : L"Native button 2";
-                m_mainUserControl.MyProperty(string);
-            }
             break;
         }
     }
@@ -165,7 +160,7 @@ private:
 
     void OnXamlButtonClick(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const&)
     {
-        m_mainUserControl.MyProperty(winrt::hstring(L"Xaml K Button 1"));
+        //m_mainUserControl.MyProperty(winrt::hstring(L"Xaml K Button 1"));
     }
 
     const HINSTANCE m_instance;

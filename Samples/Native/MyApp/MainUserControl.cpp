@@ -1,24 +1,19 @@
 ﻿#include "pch.h"
 #include "MainUserControl.h"
 
-using namespace winrt;
-using namespace Windows::UI::Xaml;
-
 namespace winrt::MyApp::implementation
 {
     MainUserControl::MainUserControl()
     {  
-
         InitializeComponent();
     }
 
-    winrt::hstring MainUserControl::MyProperty()
+
+    void winrt::MyApp::implementation::MainUserControl::Button_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const&)
     {
-        return userControl().MyProperty();
+        sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(winrt::box_value(L"Clicked!"));
     }
 
-    void MainUserControl::MyProperty(winrt::hstring value)
-    {
-        userControl().MyProperty(value);
-    }
+
 }
+

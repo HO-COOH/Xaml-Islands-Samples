@@ -1,14 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28714.193
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleUserControl", "Samples\Native\SampleUserControl\SampleUserControl.vcxproj", "{B6B66DBA-C720-4407-B490-6AE3FC2870FC}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SampleCppApp", "Samples\Win32\SampleCppApp\SampleCppApp.vcxproj", "{B8D25E17-F9FC-4DDC-A184-C28FD183DDD3}"
 	ProjectSection(ProjectDependencies) = postProject
 		{C4B7649D-C389-4F2C-B0B8-B55A08C8133F} = {C4B7649D-C389-4F2C-B0B8-B55A08C8133F}
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC} = {B6B66DBA-C720-4407-B490-6AE3FC2870FC}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyApp", "Samples\Native\MyApp\MyApp.vcxproj", "{C4B7649D-C389-4F2C-B0B8-B55A08C8133F}"
@@ -32,18 +29,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Debug|ARM64.ActiveCfg = Debug|ARM64
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Debug|ARM64.Build.0 = Debug|ARM64
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Debug|x64.ActiveCfg = Debug|x64
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Debug|x64.Build.0 = Debug|x64
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Debug|x86.ActiveCfg = Debug|Win32
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Debug|x86.Build.0 = Debug|Win32
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Release|ARM64.ActiveCfg = Release|ARM64
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Release|ARM64.Build.0 = Release|ARM64
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Release|x64.ActiveCfg = Release|x64
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Release|x64.Build.0 = Release|x64
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Release|x86.ActiveCfg = Release|Win32
-		{B6B66DBA-C720-4407-B490-6AE3FC2870FC}.Release|x86.Build.0 = Release|Win32
 		{B8D25E17-F9FC-4DDC-A184-C28FD183DDD3}.Debug|ARM64.ActiveCfg = Debug|ARM64
 		{B8D25E17-F9FC-4DDC-A184-C28FD183DDD3}.Debug|ARM64.Build.0 = Debug|ARM64
 		{B8D25E17-F9FC-4DDC-A184-C28FD183DDD3}.Debug|x64.ActiveCfg = Debug|x64
