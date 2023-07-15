@@ -10,3 +10,7 @@ What's working in this project:
 - Non-packaged mode (able to run with directly coping the build output exe and dlls) 
 - Packaged mode (packaged with msix)
 - Build with Visual Studio 2022
+
+---
+Things to be remembered:
+- Do NOT upgrade the CppWinRT nuget! Or you get compile errors! See [this issue](https://github.com/microsoft/cppwinrt/issues/884)
