@@ -5,7 +5,7 @@ I found it exceptionally difficulty to get everything working, mismatched docume
 
 --- 
 What's working in this project:
-- Xaml Island with WinUI 2.8 (and it should also work with any later versions)
+- Xaml Island with WinUI 2.8.2 pre-release (and it should also work with any later versions)
 - Webview2
 - Non-packaged mode (able to run with directly coping the build output exe and dlls) 
 - Packaged mode (packaged with msix)
@@ -14,3 +14,4 @@ What's working in this project:
 ---
 Things to be remembered:
 - Do NOT upgrade the CppWinRT nuget! Or you get compile errors! See [this issue](https://github.com/microsoft/cppwinrt/issues/884)
+- To debug, choose the startup project to the main win32 project (that is **SampleCppApp**).
