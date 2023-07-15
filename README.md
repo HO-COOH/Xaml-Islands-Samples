@@ -11,6 +11,12 @@ What's working in this project:
 - Packaged mode (packaged with msix)
 - Build with Visual Studio 2022
 
+| <!-- -->    | <!-- -->    |
+|-------------|-------------|
+|Running with debugger (unpackaged)| ![image](https://github.com/HO-COOH/Xaml-Islands-Samples/assets/42881734/501501f9-690c-4b51-ad95-2aff6d458f9c)|
+|Running the exe (unpackaged)|![image](https://github.com/HO-COOH/Xaml-Islands-Samples/assets/42881734/be54664c-5baf-4894-885f-c6e1af638b0a)|
+|Packaged| ![image](https://github.com/HO-COOH/Xaml-Islands-Samples/assets/42881734/687ae35d-6974-42fb-9689-0622c4d621fa)|
+
 ---
 Things to be remembered:
 - Do NOT upgrade the CppWinRT nuget! Or you get compile errors! See [this issue](https://github.com/microsoft/cppwinrt/issues/884)
