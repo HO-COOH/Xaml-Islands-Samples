@@ -13,8 +13,8 @@ What's working in this project:
 
 | <!-- -->    | <!-- -->    |
 |-------------|-------------|
-|Running with debugger (unpackaged)| ![image](https://github.com/HO-COOH/Xaml-Islands-Samples/assets/42881734/501501f9-690c-4b51-ad95-2aff6d458f9c)|
-|Running the exe (unpackaged)|![image](https://github.com/HO-COOH/Xaml-Islands-Samples/assets/42881734/be54664c-5baf-4894-885f-c6e1af638b0a)|
+|Running with debugger (unpackaged)| ![image](https://github.com/HO-COOH/Xaml-Islands-Samples/assets/42881734/81c8e162-1e72-4e02-9326-fe9f08a20320)|
+|Running the exe (unpackaged)|![image](https://github.com/HO-COOH/Xaml-Islands-Samples/assets/42881734/7463a41a-ae40-4087-95f9-584c0bbd1046)|
 |Packaged| ![image](https://github.com/HO-COOH/Xaml-Islands-Samples/assets/42881734/687ae35d-6974-42fb-9689-0622c4d621fa)|
 
 ---
