@@ -10,13 +10,40 @@
 #include <windowsx.h>
 #include <wil/resource.h>
 
+/**
+ * @brief A class providing basic utility for hosting XAML inside a Win32 hwnd
+ */
 class DesktopWindow
 {
 protected:
+
+    /**
+     * @brief Running `GetMessage()` and `TranslateMessage()`
+     */
     int MessageLoop(HACCEL accelerators);
+
+    /**
+     * @brief Create a xaml island window for a custom XAML control
+     * 
+     * @param extraStyles extra window style
+     * @param content The custom xaml control
+     * @return `HWND` for the island
+     */
     HWND CreateDesktopWindowsXamlSource(DWORD extraStyles, const winrt::Windows::UI::Xaml::UIElement& content);
+
+    /**
+     * @brief Called in `WM_DESTROY` to release xaml island resources
+     */
     void ClearXamlIslands();
 
+    /**
+     * @brief Returns a scale factor (not raw dpi), should be > 1.0f
+     */
+    float GetDpiScale() const;
+
+    /**
+     * @brief Returns the main win32 window
+     */
     HWND WindowHandle() const
     {
         return m_window.get();
@@ -86,6 +113,7 @@ protected:
 
 private:
 
+
     void OnActivate(HWND, UINT state, HWND hwndActDeact, BOOL fMinimized)
     {
         if (state == WA_INACTIVE)
@@ -104,11 +132,3 @@ private:
 
     HWND m_hwndLastFocus = nullptr;
 };
-
-winrt::Windows::UI::Xaml::UIElement LoadXamlControl(uint32_t id);
-
-template<typename T>
-T LoadXamlControl(uint32_t id)
-{
-    return LoadXamlControl(id).as<T>();
-}

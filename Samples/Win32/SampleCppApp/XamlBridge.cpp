@@ -2,6 +2,8 @@
 
 #include "XamlBridge.h"
 #include "Resource.h"
+#include <ShellScalingApi.h>
+
 
 bool DesktopWindow::FilterMessage(const MSG* msg)
 {
@@ -245,15 +247,9 @@ void DesktopWindow::ClearXamlIslands()
     m_xamlSources.clear();
 }
 
-winrt::Windows::UI::Xaml::UIElement LoadXamlControl(uint32_t id)
+float DesktopWindow::GetDpiScale() const
 {
-    auto rc = ::FindResourceW(nullptr, MAKEINTRESOURCE(id), MAKEINTRESOURCE(XAMLRESOURCE));
-    THROW_LAST_ERROR_IF(!rc);
-
-    HGLOBAL rcData = ::LoadResource(nullptr, rc);
-    THROW_LAST_ERROR_IF(!rcData);
-
-    auto data = static_cast<wchar_t*>(::LockResource(rcData));
-    auto content = winrt::Windows::UI::Xaml::Markup::XamlReader::Load(data);
-    return content.as<winrt::Windows::UI::Xaml::UIElement>();
+    DEVICE_SCALE_FACTOR scaleFactor{};
+    winrt::check_hresult(GetScaleFactorForMonitor(MonitorFromWindow(WindowHandle(), 0), &scaleFactor));
+    return static_cast<int>(scaleFactor) / 100.0f;
 }
