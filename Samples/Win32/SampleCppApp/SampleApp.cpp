@@ -6,7 +6,7 @@
 
 #include <winrt/Microsoft.Toolkit.Win32.UI.XamlHost.h>
 
-const wchar_t c_WindowClass[] = L"SimpleCppAppWindowClass";
+
 
 class AppWindow : public DesktopWindowT<AppWindow>
 {
@@ -14,6 +14,8 @@ class AppWindow : public DesktopWindowT<AppWindow>
     {
         return DesktopWindow::MessageLoop(m_accelerators.get());
     }
+    constexpr static auto c_WindowClass = L"SimpleCppAppWindowClass";
+    constexpr static auto c_WindowTitle = L"MyApp";
 public:
     static int Show(HINSTANCE hInstance, int nCmdShow)
     {
@@ -54,10 +56,8 @@ private:
         wcex.hIconSm = LoadIconW(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
         RegisterClassExW(&wcex); // don't test result, handle error at CreateWindow
 
-        wchar_t title[64];
-        LoadStringW(m_instance, IDS_APP_TITLE, title, ARRAYSIZE(title));
 
-        HWND window = CreateWindowW(c_WindowClass, title, WS_OVERLAPPEDWINDOW,
+        HWND window = CreateWindowW(c_WindowClass, c_WindowTitle, WS_OVERLAPPEDWINDOW,
             CW_USEDEFAULT, CW_USEDEFAULT, InitialWidth, InitialHeight,
             nullptr, nullptr, m_instance, this);
         THROW_LAST_ERROR_IF(!window);
@@ -77,19 +77,11 @@ private:
         return true;
     }
 
-    void OnDestroy(HWND hwnd) noexcept
-    {
-        base_type::OnDestroy(hwnd);
-    }
 
     void OnResize(HWND, UINT state, int cx, int cy) noexcept
     {
         //This will be called after initial window creation and ALSO dpi changes
-        const auto newHeight = cy;
-        const auto newWidth = cx;
-        const auto islandHeight = newHeight - (ButtonHeight * 2) - ButtonMargin;
-        const auto islandWidth = newWidth - (ButtonMargin * 2);
-        SetWindowPos(m_xamlIsland, 0, 0, XamlIslandMargin, islandWidth, islandHeight, SWP_SHOWWINDOW);
+        SetWindowPos(m_xamlIsland, 0, 0, 0, cx, cy, SWP_SHOWWINDOW);
     }
 
     const HINSTANCE m_instance;
